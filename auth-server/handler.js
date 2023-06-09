@@ -12,7 +12,7 @@ const credentials = {
   token_uri: "https://oauth2.googleapis.com/token",
   auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
   redirect_uris: ["https://tessa-tum.github.io/devtrec/"],
-  javascript_origins: ["https://tessa-tum.github.io", "http://localhost:3000"],
+  javascript_origins: ["https://tessa-tum.github.io"],
 };
 
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
