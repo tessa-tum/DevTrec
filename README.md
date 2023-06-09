@@ -27,7 +27,7 @@ With the Meet APP, the user is able to
 
  The app will use the Google Calendar API to fetch data about upcoming events that users are interested in. Google’s Calendar API is protected and requires an authorization token. Therefore, the app will use an authorization service deployed in a serverless AWS Lambda function. An OAuth consumer will be created to allow serving authorization tokens. Upon request, the app will submit its credentials to the Lambda function. If they are valid, a JWT token will be ushered and used to submit the request to the Google Calendar API.
 
- ![Screenshot of authorization flow](https://github.com/tessa-tum/devtrec/blob/main/src/assets/devtrec_auth-flow_diagram.png)
+ ![Screenshot of authorization flow](https://github.com/tessa-tum/devtrec/blob/main/src/assets/devtrtec_auth-flow_diagram.png)
 
 ## TDD and BDD
 
