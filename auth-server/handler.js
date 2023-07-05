@@ -1,5 +1,5 @@
 const { google } = require("googleapis");
-const OAuth2 = google.auth.OAuth2;
+// const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
 const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
@@ -23,7 +23,6 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 
 // getAuthURL: return authorization URL so user can authorize the app via an authorization code (Google consent screen)
-
 module.exports.getAuthURL = async () => {
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: "offline",
@@ -43,7 +42,6 @@ module.exports.getAuthURL = async () => {
 };
 
 // getAccessToken: authorization code from getAuthURL is passed to getAccessToken, Google then provides access token
-
 module.exports.getAccessToken = async (event) => {
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
@@ -80,7 +78,6 @@ module.exports.getAccessToken = async (event) => {
 };
 
 // getCalendarEvents: request calendar events from Google API (by attaching the access token to the request)
-
 module.exports.getCalendarEvents = async (event) => {
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
