@@ -3,10 +3,7 @@ import userEvent from "@testing-library/user-event";
 import CitySearch from "../components/CitySearch";
 import { extractLocations, getEvents } from "../api";
 
-// Feature 1: Filter events by city name
-
 describe("<CitySearch /> component", () => {
-
   test("render text input", () => {
     render(<CitySearch />);
     const cityTextBox = screen.getByRole("textbox");
@@ -22,7 +19,6 @@ describe("<CitySearch /> component", () => {
 
   test("render a list of suggestions when city textbox gains focus", async () => {
     const user = userEvent.setup();
-
     render(<CitySearch />);
     const cityTextBox = screen.getByRole("textbox");
     await user.click(cityTextBox);
@@ -63,16 +59,11 @@ describe("<CitySearch /> component", () => {
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
     render(<CitySearch allLocations={allLocations} />);
-
     const cityTextBox = screen.getByRole("textbox");
     await user.type(cityTextBox, "Berlin");
-
     // the suggestion's textContent look like this: "Berlin, Germany"
-    const BerlinGermanySuggestion =
-    screen.getAllByRole("listitem")[0];
-
+    const BerlinGermanySuggestion = screen.getAllByRole("listitem")[0];
     await user.click(BerlinGermanySuggestion);
-
     expect(cityTextBox).toHaveValue(BerlinGermanySuggestion.textContent);
   });
 });

@@ -4,17 +4,16 @@ import Event from "../components/Event";
 import { getEvents } from "../api";
 
 describe("<Event /> component", () => {
-
-  let allEvents = []
-  let firstEvent = {}
+  let allEvents = [];
+  let firstEvent = {};
 
   beforeAll(async () => {
     allEvents = await getEvents();
-    firstEvent = allEvents[0]
+    firstEvent = allEvents[0];
   });
 
   test("render event title", () => {
-    render(<Event firstEvent={firstEvent}/>);
+    render(<Event firstEvent={firstEvent} />);
     expect(screen.getByText(firstEvent.summary)).toBeInTheDocument();
   });
 
@@ -41,7 +40,6 @@ describe("<Event /> component", () => {
 
   test("show details when clicked", async () => {
     const user = userEvent.setup();
-
     render(<Event firstEvent={firstEvent} />);
     expect(screen.getByTestId("details-button")).toBeInTheDocument();
     expect(screen.queryByTestId("event-details")).not.toBeInTheDocument();
@@ -51,7 +49,6 @@ describe("<Event /> component", () => {
 
   test("hide details when clicked", async () => {
     const user = userEvent.setup();
-
     render(<Event firstEvent={firstEvent} />);
     expect(screen.getByTestId("details-button")).toBeInTheDocument();
     await user.click(screen.getByTestId("details-button"));
@@ -59,5 +56,4 @@ describe("<Event /> component", () => {
     await user.click(screen.getByTestId("details-button"));
     expect(screen.queryByTestId("event-details")).not.toBeInTheDocument();
   });
-
 });
