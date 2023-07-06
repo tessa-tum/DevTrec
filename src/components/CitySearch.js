@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-// Feature 1: Filter events by city name
-
 const CitySearch = ({ allLocations }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
@@ -14,7 +12,6 @@ const CitySearch = ({ allLocations }) => {
           return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
         })
       : [];
-
     setQuery(value);
     setSuggestions(filteredLocations);
   };

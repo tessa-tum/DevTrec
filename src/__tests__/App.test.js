@@ -8,14 +8,16 @@ describe("<App /> component", () => {
     AppDOM = render(<App />).container.firstChild;
   });
 
-  // Feature 1: Filter events by city name
-
-  test("renders list of events", () => {
+  test("render list of events", () => {
     expect(AppDOM.querySelector("#event-list")).toBeInTheDocument();
   });
 
   test("render CitySearch", () => {
     expect(AppDOM.querySelector("#city-search")).toBeInTheDocument();
+  });
+
+  test("render NumberOfEvents", () => {
+    expect(AppDOM.querySelector("#number-of-events")).toBeInTheDocument();
   });
   
 });

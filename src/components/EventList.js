@@ -1,7 +1,5 @@
 import Event from "./Event";
 
-// Feature 1: Filter events by city name
-
 const EventList = ({ events }) => {
   return (
     <ul id="event-list">
