@@ -1,48 +1,40 @@
 import React, { useState } from "react";
 
-const Event = ({ firstEvent }) => {
-  const [collapsed, setCollapsed] = useState(true);
-
-  const toggleDetails = () => {
-    setCollapsed((prevState) => !prevState);
-  };
+const Event = ({ event }) => {
+  const [showDetails, setShowDetails] = useState(false);
 
   return (
     <li>
       <div className="event">
-        <div>
-          {firstEvent ? (
-            <div>
-              <h1 className="summary">{firstEvent.summary}</h1>
-              <p className="event-start">{firstEvent.start.dateTime}</p>
-              <p className="event-location">{firstEvent.location}</p>
-            </div>
-          ) : null}
-        </div>
+        <h2 className="summary">{event && event.summary}</h2>
+        <p className="event-location">{event && event.location}</p>
+        <p className="event-start" data-testid="event-start">
+          {event && new Date(event.start.dateTime).toUTCString()}
+        </p>
 
-        <div>
-          {!collapsed && (
-            <div data-testid="event-details" className="event-details">
-              <h2 className="about">About event:</h2>
-              <a
-                className="link"
-                href={firstEvent.htmlLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                See details on Google Calendar
-              </a>
-              <p className="description">{firstEvent.description}</p>
-            </div>
-          )}
-        </div>
+        {showDetails ? (
+          <div data-testid="event-details" className="event-details">
+            <h3 className="about">About event:</h3>
+            <a
+              className="link"
+              href={event.htmlLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See details on Google Calendar
+            </a>
+            <p className="event-description">{event.description}</p>
+          </div>
+        ) : null}
 
         <button
           data-testid="details-button"
           className="details-button"
-          onClick={toggleDetails}
+          onClick={() => {
+            showDetails ? setShowDetails(false) : setShowDetails(true);
+          }}
         >
-          {collapsed ? "show details" : "hide details"}
+          {showDetails ? "hide details" : "show details"}
         </button>
       </div>
     </li>

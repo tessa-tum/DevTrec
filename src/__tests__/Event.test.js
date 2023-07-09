@@ -3,28 +3,30 @@ import userEvent from "@testing-library/user-event";
 import Event from "../components/Event";
 import { getEvents } from "../api";
 
+// unit testing
+
 describe("<Event /> component", () => {
   let allEvents = [];
-  let firstEvent = {};
+  let event = {};
 
   beforeAll(async () => {
     allEvents = await getEvents();
-    firstEvent = allEvents[0];
+    event = allEvents[0];
   });
 
   test("render event title", () => {
-    render(<Event firstEvent={firstEvent} />);
-    expect(screen.getByText(firstEvent.summary)).toBeInTheDocument();
+    render(<Event event={event} />);
+    expect(screen.getByText(event.summary)).toBeInTheDocument();
   });
 
   test("render event start time", () => {
-    render(<Event firstEvent={firstEvent} />);
-    expect(screen.getByText(firstEvent.start.dateTime)).toBeInTheDocument();
+    render(<Event event={event} />);
+    expect(screen.getByTestId("event-start")).toBeInTheDocument();
   });
 
   test("render event location", () => {
-    render(<Event firstEvent={firstEvent} />);
-    expect(screen.getByText(firstEvent.location)).toBeInTheDocument();
+    render(<Event event={event} />);
+    expect(screen.getByText(event.location)).toBeInTheDocument();
   });
 
   test("render show details button", () => {
@@ -40,7 +42,7 @@ describe("<Event /> component", () => {
 
   test("show details when clicked", async () => {
     const user = userEvent.setup();
-    render(<Event firstEvent={firstEvent} />);
+    render(<Event event={event} />);
     expect(screen.getByTestId("details-button")).toBeInTheDocument();
     expect(screen.queryByTestId("event-details")).not.toBeInTheDocument();
     await user.click(screen.getByTestId("details-button"));
@@ -49,7 +51,7 @@ describe("<Event /> component", () => {
 
   test("hide details when clicked", async () => {
     const user = userEvent.setup();
-    render(<Event firstEvent={firstEvent} />);
+    render(<Event event={event} />);
     expect(screen.getByTestId("details-button")).toBeInTheDocument();
     await user.click(screen.getByTestId("details-button"));
     expect(screen.getByTestId("event-details")).toBeInTheDocument();

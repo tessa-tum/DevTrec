@@ -1,21 +1,23 @@
 import { useState } from "react";
 
-const NumberOfEvents = () => {
-  const [numberInput, setNumberInput] = useState(32);
+const NumberOfEvents = ({ setCurrentNOE }) => {
+  const [number, setNumber] = useState(32);
 
-  // handle input change
   const handleInputChanged = (event) => {
     const value = event.target.value;
-    setNumberInput(value);
+    setNumber(value);
+    setCurrentNOE(value);
   };
 
   return (
     <div id="number-of-events">
+      <div className="search-overline">Specify number of events</div>
+      <label htmlFor="number-of-events-input"></label>
       <input
-        type="number"
-        data-testid="number-input"
-        className="events-number"
-        value={numberInput}
+        type="text"
+        data-testid="number-of-events-input"
+        id="number-of-events-input"
+        value={number}
         onChange={handleInputChanged}
       />
     </div>
