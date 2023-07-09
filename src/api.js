@@ -29,7 +29,7 @@ export const getEvents = async () => {
   if (token) {
     removeQuery();
     const url =
-      "https://j7brorfc5myoqxco3bpk3bsiyq0lszsl.lambda-url.eu-central-1.on.aws/api/get-events/" +
+      "https://cy0c6gjcv9.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" +
       "/" +
       token;
     const response = await fetch(url);
@@ -53,7 +53,7 @@ export const getAccessToken = async () => {
     const code = await searchParams.get("code");
     if (!code) {
       const response = await fetch(
-        "https://n264hn5574w2xq7nyt5en4wdsa0mlozf.lambda-url.eu-central-1.on.aws/api/get-auth-url"
+        "https://cy0c6gjcv9.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
       );
       const result = await response.json();
       const { authUrl } = result;
@@ -96,7 +96,7 @@ const getToken = async (code) => {
     const encodeCode = encodeURIComponent(code);
 
     const response = await fetch(
-      "https://rescmuarp6dy752of75f4u2f7e0igyca.lambda-url.eu-central-1.on.aws/api/token" +
+      "https://cy0c6gjcv9.execute-api.eu-central-1.amazonaws.com/dev/api/token" +
         "/" +
         encodeCode
     );
