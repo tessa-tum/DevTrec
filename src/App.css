@@ -76,7 +76,7 @@ input[type="number"] {
 .suggestions {
   width: 250px;
   position: absolute;
-  top: 45px;
+  top: 75px;
   z-index: 2;
   align-self: center;
   margin: 0;
@@ -138,6 +138,14 @@ input[type="number"] {
     width: 50%;
     height: auto;
   }
+}
+
+.alerts-container {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
 }
 
 /* media queries */

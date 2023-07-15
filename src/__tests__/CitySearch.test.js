@@ -22,7 +22,7 @@ describe("<CitySearch /> component", () => {
 
   test("render a list of suggestions when city textbox gains focus", async () => {
     const user = userEvent.setup();
-    render(<CitySearch allLocations={[]} />);
+    render(<CitySearch allLocations={[]} setInfoAlert={() => {}} />);
     const cityTextBox = screen.getByRole("textbox");
     await user.click(cityTextBox);
     const suggestionList = screen.getByRole("list");
@@ -34,7 +34,7 @@ describe("<CitySearch /> component", () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
-    render(<CitySearch allLocations={allLocations} />);
+    render(<CitySearch allLocations={allLocations} setInfoAlert={() => {}} />);
 
     // user types "Berlin" in city textbox
     const cityTextBox = screen.getByRole("textbox");
@@ -62,7 +62,11 @@ describe("<CitySearch /> component", () => {
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
     render(
-      <CitySearch allLocations={allLocations} setCurrentCity={() => {}} />
+      <CitySearch
+        allLocations={allLocations}
+        setCurrentCity={() => {}}
+        setInfoAlert={() => {}}
+      />
     );
     const cityTextBox = screen.getByRole("textbox");
     await user.type(cityTextBox, "Berlin");

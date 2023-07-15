@@ -20,7 +20,9 @@ describe("<NumberOfEvents /> component", () => {
 
   test("value of input field changes when user types in it", async () => {
     const user = userEvent.setup();
-    render(<NumberOfEvents setCurrentNOE={() => {}} />);
+    render(
+      <NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}} />
+    );
     const number = screen.getByTestId("number-of-events-input");
     expect(number).toBeInTheDocument();
     expect(number).toHaveValue("32");
