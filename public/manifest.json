@@ -3,8 +3,8 @@
   "name": "DevTrec Meet App",
   "icons": [
     {
-      "src": "favicon-48.png",
-      "type": "image/png",
+      "src": "favicon.ico",
+      "type": "image/x-icon",
       "sizes": "48x48",
       "purpose": "maskable"
     },
