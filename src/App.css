@@ -2,18 +2,12 @@
 
 .App {
   text-align: center;
-  padding: 2% 5%;
+  padding: 3% 5%;
   background-color: #f0fff3;
 }
 
 .App * {
   box-sizing: border-box;
-}
-
-/* header and searches container */
-
-.header-container {
-  margin-top: 20px;
 }
 
 .devtrec-logo {
@@ -39,8 +33,11 @@
 }
 
 ul {
-  padding: 0;
-  list-style: none;
+list-style: none;
+padding: 0px;
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ grid-gap: 2rem;
 }
 
 p {
@@ -100,15 +97,11 @@ input[type="number"] {
   background-color: #bcdcdb;
 }
 
-/* list of events grid */
-
 .event {
   padding: 30px;
   text-align: center;
   border-radius: 4px;
-  position: relative;
   background-color: #c6f1e7;
-  margin-bottom: 20px;
 }
 
 .link {
@@ -130,16 +123,6 @@ input[type="number"] {
   color: #fff;
 }
 
-@supports (display: grid) {
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 0 auto;
-    width: 50%;
-    height: auto;
-  }
-}
-
 .alerts-container {
   position: fixed;
   top: 0px;
@@ -151,13 +134,27 @@ input[type="number"] {
 /* media queries */
 
 @media all and (max-width: 500px) {
-  .grid {
-    width: auto;
-  }
+  ul {
+    list-style: none;
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-gap: 2rem;
+    }
+
+    .App {
+      padding: 6% 8%;
+    }
 }
 
 @media all and (min-width: 500px) and (max-width: 750px) {
-  .grid {
-    width: auto;
-  }
+  ul {
+    list-style: none;
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-gap: 2rem;
+    }
+
+    .App {
+      padding: 6% 8%;
+    }
 }

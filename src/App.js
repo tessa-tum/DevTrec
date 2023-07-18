@@ -1,6 +1,7 @@
 import CitySearch from "./components/CitySearch";
 import EventList from "./components/EventList";
 import NumberOfEvents from "./components/NumberOfEvents";
+import CityEventsChart from "./components/CityEventsChart";
 import Header from "./Header";
 import { useEffect, useState } from "react";
 import { extractLocations, getEvents } from "./api";
@@ -59,7 +60,8 @@ const App = () => {
           setErrorAlert={setErrorAlert}
         />
       </div>
-      <div className="grid">
+      <CityEventsChart allLocations={allLocations} events={events} />
+      <div>
         <EventList events={events} />
       </div>
     </div>
