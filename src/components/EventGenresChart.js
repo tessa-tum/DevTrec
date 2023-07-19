@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from "recharts";
 
@@ -43,7 +44,7 @@ const EventGenresChart = ({ events }) => {
         textAnchor={x > cx ? "start" : "end"}
         dominantBaseline="central"
       >
-       {(percent * 100).toFixed(0)}%
+        {(percent * 100).toFixed(0)}%
       </text>
     ) : null;
   };
@@ -51,7 +52,7 @@ const EventGenresChart = ({ events }) => {
   return (
     <ResponsiveContainer width="99%" height={400}>
       <PieChart width={400} height={400}>
-      <Legend iconType='plainline' verticalAlign="bottom"/>
+        <Legend iconType="plainline" verticalAlign="bottom" />
         <Pie
           data={data}
           cx="50%"

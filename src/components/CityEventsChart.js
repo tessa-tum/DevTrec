@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import {
   ScatterChart,
@@ -21,7 +22,7 @@ const CityEventsChart = ({ allLocations, events }) => {
       const count = events.filter(
         (event) => event.location === location
       ).length;
-      const city = location.split((/, | - /))[0]
+      const city = location.split(/, | - /)[0];
       return { city, count };
     });
     return data;
@@ -34,7 +35,7 @@ const CityEventsChart = ({ allLocations, events }) => {
           top: 40,
           right: 20,
           bottom: 60,
-          left: 0,
+          left: -20,
         }}
       >
         <CartesianGrid />

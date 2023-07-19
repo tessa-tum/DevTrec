@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-node-access */
 // acceptance tests for app feature 1: filter events by city
 
 import { render, within, waitFor } from "@testing-library/react";

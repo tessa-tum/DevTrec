@@ -1,3 +1,5 @@
+/* eslint-disable testing-library/no-node-access */
+/* eslint-disable testing-library/render-result-naming-convention */
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CitySearch from "../components/CitySearch";

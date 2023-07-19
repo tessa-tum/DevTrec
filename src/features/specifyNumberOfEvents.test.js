@@ -1,3 +1,5 @@
+/* eslint-disable testing-library/no-node-access */
+/* eslint-disable testing-library/render-result-naming-convention */
 // acceptance tests for app feature 3: specify the number of events
 
 import { render, within, waitFor } from "@testing-library/react";

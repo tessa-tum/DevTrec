@@ -1,3 +1,5 @@
+/* eslint-disable testing-library/render-result-naming-convention */
+/* eslint-disable testing-library/no-node-access */
 // acceptance tests for app feature 2: show/hide event details
 
 import { render, waitFor, within } from "@testing-library/react";

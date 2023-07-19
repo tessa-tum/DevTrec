@@ -1,3 +1,5 @@
+/* eslint-disable testing-library/no-node-access */
+/* eslint-disable testing-library/render-result-naming-convention */
 import { render, screen, within, waitFor } from "@testing-library/react";
 import { getEvents } from "../api";
 import EventList from "../components/EventList";

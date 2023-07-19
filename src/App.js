@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import CitySearch from "./components/CitySearch";
 import EventList from "./components/EventList";
 import NumberOfEvents from "./components/NumberOfEvents";
 import CityEventsChart from "./components/CityEventsChart";
 import EventGenresChart from "./components/EventGenresChart";
-import Header from "./Header";
+import Header from "./components/Header";
 import { useEffect, useState } from "react";
 import { extractLocations, getEvents } from "./api";
 import { InfoAlert, ErrorAlert, WarningAlert } from "./components/Alert";
@@ -61,10 +62,12 @@ const App = () => {
           setErrorAlert={setErrorAlert}
         />
       </div>
+      <p className="section-title">Number of events per city & their genre:</p>
       <div className="charts-container">
         <CityEventsChart allLocations={allLocations} events={events} />
         <EventGenresChart events={events} />
       </div>
+      <p className="section-title">Find the event you are looking for:</p>
       <EventList events={events} />
     </div>
   );

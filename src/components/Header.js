@@ -1,4 +1,4 @@
-import devtrecLogo from "./assets/devtrec_logo_cropped.png";
+import devtrecLogo from "../assets/devtrec_logo_cropped.png";
 
 const Header = () => {
   return (
