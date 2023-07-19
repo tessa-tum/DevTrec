@@ -31,10 +31,10 @@ const CityEventsChart = ({ allLocations, events }) => {
     <ResponsiveContainer width="99%" height={400}>
       <ScatterChart
         margin={{
-          top: 60,
+          top: 40,
           right: 20,
           bottom: 60,
-          left: -30,
+          left: 0,
         }}
       >
         <CartesianGrid />
@@ -53,7 +53,7 @@ const CityEventsChart = ({ allLocations, events }) => {
           allowDecimals={false}
         />
         <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-        <Scatter name="A city" data={data} fill="#fa4659" />
+        <Scatter name="A city" data={data} fill="#11CBD7" />
       </ScatterChart>
     </ResponsiveContainer>
   );
