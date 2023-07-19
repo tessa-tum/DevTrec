@@ -1,31 +1,47 @@
-# DevTrec (Meet App)
+# DevTrec PWA
 
 ## Project description
 
 DevTrec is a progressive web application that helps users to stay informed about upcoming web development events near or in their city.
-The app will be built using test/behaviour-driven development techniques and will be designed as a serverless PWA. DevTrec will use the Google Calendar API to fetch and show upcoming events. Serverless functions will be hosted on AWS.
+The app has been built using test/behaviour-driven development techniques and is designed as a serverless PWA. DevTrec uses the Google Calendar API to fetch and show upcoming events. Serverless functions are hosted on AWS.
+
+Deployed app link: https://tessa-tum.github.io/devtrec/
+
+## Interface (Desktop)
+
+![PWA 1](./src\assets\devtrec-pwa1.PNG) <br>
+![PWA 2](./src\assets\devtrec-pwa2.PNG) <br>
 
 ## Key features
 
-With the Meet APP, the user is able to
+With DevTrec, the user is able to
 - filter events by city name
 - specify the number of events being shown
 - show/hide event details
 - use the app when offline
 - add an app alias to the home screen (mobile / desktop)
-- view a chart showing the number of upcoming events by city
+- view a scatter chart showing the number of upcoming events by city
+- view a pie chart showing the genres of displayed events
 
-## Languages, Libraries
+## Techstack
 
 - React
   - JSX
   - JavaScript
-- HTML
-- CSS
+- HTML, CSS
+- Recharts lib
+
+### Data and authentication:
+
+- AWS Lambda, Google OAuth2, Google Calendar API
+
+### Testing:
+
+- React Testing Library, Jest, Jest-Cucumber, Puppeteer
 
 ## Serverless authorization
 
- The app will use the Google Calendar API to fetch data about upcoming events that users are interested in. Google’s Calendar API is protected and requires an authorization token. Therefore, the app will use an authorization service deployed in a serverless AWS Lambda function. An OAuth consumer will be created to allow serving authorization tokens. Upon request, the app will submit its credentials to the Lambda function. If they are valid, a JWT token will be ushered and used to submit the request to the Google Calendar API.
+ The app uses the Google Calendar API to fetch data about upcoming events that users are interested in. Google’s Calendar API is protected and requires an authorization token. Therefore, the app uses an authorization service deployed in a serverless AWS Lambda function. An OAuth consumer is created to allow serving authorization tokens. Upon request, the app submits its credentials to the Lambda function. If they are valid, a JWT token is ushered and used to submit the request to the Google Calendar API.
 
  ![Screenshot of authorization flow](https://github.com/tessa-tum/devtrec/blob/main/src/assets/devtrtec_auth-flow_diagram.png)
 
