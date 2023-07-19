@@ -9,8 +9,8 @@ Deployed app link: https://tessa-tum.github.io/devtrec/
 
 ## Interface (Desktop)
 
-![PWA 1](./src\assets\devtrec-pwa1.PNG) <br>
-![PWA 2](./src\assets\devtrec-pwa2.PNG) <br>
+![PWA 1](https://github.com/tessa-tum/devtrec/blob/main/src/assets/devtrec-pwa1.PNG) <br>
+![PWA 2](https://github.com/tessa-tum/devtrec/blob/main/src/assets/devtrec-pwa2.PNG) <br>
 
 ## Key features
 
